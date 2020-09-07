@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56423A4E-F45F-4FFF-9F2D-B7D91E937BE9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrestTema.Web</RootNamespace>
+    <AssemblyName>FrestTema.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44323</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app-assets\css\bootstrap-extended.css" />
+    <Content Include="app-assets\css\bootstrap-extended.min.css" />
+    <Content Include="app-assets\css\bootstrap.css" />
+    <Content Include="app-assets\css\bootstrap.min.css" />
+    <Content Include="app-assets\css\colors.css" />
+    <Content Include="app-assets\css\colors.min.css" />
+    <Content Include="app-assets\css\components.css" />
+    <Content Include="app-assets\css\components.min.css" />
+    <Content Include="app-assets\css\core\colors\palette-noui.css" />
+    <Content Include="app-assets\css\core\colors\palette-noui.min.css" />
+    <Content Include="app-assets\css\core\menu\menu-types\horizontal-menu.css" />
+    <Content Include="app-assets\css\core\menu\menu-types\horizontal-menu.min.css" />
+    <Content Include="app-assets\css\custom.css" />
+    <Content Include="app-assets\css\pages\authentication.css" />
+    <Content Include="app-assets\css\pages\authentication.min.css" />
+    <Content Include="app-assets\css\pages\cv.css" />
+    <Content Include="app-assets\fonts\boxicons\css\boxicons.css" />
+    <Content Include="app-assets\fonts\boxicons\css\boxicons.min.css" />
+    <Content Include="app-assets\fonts\boxicons\fonts\boxicons.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\js\LivIconsEvo.defaults.js" />
+    <Content Include="app-assets\fonts\LivIconsEvo\js\LivIconsEvo.defaults.min.js" />
+    <Content Include="app-assets\fonts\LivIconsEvo\js\LivIconsEvo.min.js" />
+    <Content Include="app-assets\fonts\LivIconsEvo\js\LivIconsEvo.tools.js" />
+    <Content Include="app-assets\fonts\LivIconsEvo\js\LivIconsEvo.tools.min.js" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\adjust.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\alarm.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\anchor.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\angle-wide-bottom-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\angle-wide-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\angle-wide-left-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\angle-wide-left.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\angle-wide-right-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\angle-wide-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\angle-wide-top-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\angle-wide-top.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\apple.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\arrow-bottom-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\arrow-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\arrow-left-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\arrow-left.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\arrow-right-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\arrow-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\arrow-top-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\arrow-top.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\balance.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\ban.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\bank.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\bar-chart.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\battery-charge.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\battery-full.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\battery-low.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\bell.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\bomb.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\box-add.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\box-delete.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\box-extract.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\box.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\briefcase.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\british-pound.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\brush.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\bug.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\building.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\bulb.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\calculator.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\calendar.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\camcoder.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\camera.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\car.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\caret-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\caret-left.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\caret-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\caret-top.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\check-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\check.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\chevron-bottom-double.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\chevron-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\chevron-left-double.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\chevron-left.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\chevron-right-double.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\chevron-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\chevron-top-double.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\chevron-top.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\circle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\clapboard.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\clock.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\close.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\cloud-download.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\cloud-upload.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\coins.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\collapse.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\comment.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\comments.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\compass.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\cpu.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\credit-card-in.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\credit-card-out.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\dashboard.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\desktop.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\diagram.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\dislike.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\divide-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\divide.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\download.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\drop.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\dropper.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\envelope-pull.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\envelope-put.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\euro.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\expand.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\external-link.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\file-export.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\file-import.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\fire.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\flag.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\gear.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\gears.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\gift.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\globe.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\grid.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\hammer.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\hand-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\hand-left.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\hand-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\hand-top.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\handcuffs.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\headphones.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\heart.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\help.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\home.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\hourglass.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\idea.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\image.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\index.html" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\info-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\info.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\lab.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\label-hot.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\label-new.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\leaf.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\legal.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\lightning.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\like.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\line-chart.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\link.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\list.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-1.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-10.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-11.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-12.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-13.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-14.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-15.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-16.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-3.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-4.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-5.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-6.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-7.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-8.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\loader-9.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\location-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\location.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\lock.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\magic.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\magnet.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\map.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\minus-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\minus.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\more.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-add-remove.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-arrow-left-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-arrow-top-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-bar-chart.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-bell.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-bookmark.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-brightness.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-bulb.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-celsius-fahrenheit.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-checkbox-1.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-checkbox-2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-checkbox-3.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-checkbox-4.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-chevron-close.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-chevron-left-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-chevron-top-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-octagon.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-octagon2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-rounded.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-smooth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-square.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-square2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-sticker.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-sticker2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-circle-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-clock.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-cloud.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-connect.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-desktop-smartphone.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-desktop-tablet.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-doc.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-envelope.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-eye-open-close.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-flag.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-folder.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-fullscreen-close.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-fullscreen.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-glass.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-heart.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-link.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-lock.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-login.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-login2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-map.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-menu-arrow-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-menu-arrow-left.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-menu-arrow-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-menu-arrow-top.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-menu-close-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-menu-close.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-menu-collapse.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-microphone.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-minus-plus.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon-rounded.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon-smooth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon-square.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon-square2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon-sticker.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon-sticker2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon2-rounded.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon2-smooth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon2-square.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon2-square2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon2-sticker.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon2-sticker2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon2-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-octagon2-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-orientation-smartphone.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-orientation-tablet.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-pin.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-play-pause.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-play-stop.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-powerswitch.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-preview.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-quality.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-radio-1.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-radio-2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-radio-3.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-radio-4.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-resize-diagonal.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-resize-left-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-resize-top-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-rounded-smooth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-rounded-square.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-rounded-square2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-rounded-sticker.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-rounded-sticker2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-rounded-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-rounded-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-search-close.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-shield.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-slider-left-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-slider-top-bottom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-smile.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-smooth-square.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-smooth-square2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-smooth-sticker.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-smooth-sticker2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-smooth-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-smooth-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-sort-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-sort.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-speaker.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-square-sticker.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-square-sticker2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-square-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-square-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-square2-sticker.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-square2-sticker2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-square2-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-square2-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-stack.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-star.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-sticker-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-sticker-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-sticker2-triangle.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-sticker2-triangle2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-sun-moon.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-table-lamp.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-tablet-smartphone.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-thumbnails-close.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-toggle-1.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-toggle-2.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-umbrella.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\morph-zoom.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\multiply-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\multiply.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\music.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\narrow-screen.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\notebook.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\octagon.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\paper-clip.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\paper-plane.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\pen.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\pencil.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\phone-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\phone.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\pie-chart.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\piggybank.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\playlist.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\plus-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\plus.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\print-doc.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\print-image.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\priority-high.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\priority-low.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\pulse.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\question-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\question.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\radiation.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\redo.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\refresh.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\remove.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\responsive.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\retweet.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\rocket.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\rotate-left.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\rotate-right.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\satellite.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\save.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\scales.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\scissors.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\screenshot.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\scroll-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\scroll.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\search.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\servers.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\settings.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\share-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\share.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\shield.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\shoppingcart-in.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\shoppingcart-out.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\shoppingcart.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\sky-dish.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\smartphone.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\sort.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\square.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\star-half.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\star.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-four-fifth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-full.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-one-fifth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-one-fourth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-one-third.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-three-fifth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-three-fourth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-two-fifth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-two-fourth.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\step-two-third.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\stopwatch.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\swap-horizontal.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\swap-vertical.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\tablet.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\tag.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\thumbnails-big.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\thumbnails-small.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\timer.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\touch.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\trash.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\trophy.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\truck.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\two-pointers.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\umbrella.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\undo.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\unlink.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\unlock.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\upload.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\us-dollar.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\user.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\users.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\warning-alt.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\warning.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\weather-cloud-sun.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\weather-cloud.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\weather-rain-thunder.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\weather-rain.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\weather-snow.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\weather-sun.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\weather-thunderstorm.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wide-screen.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wifi.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wind-east.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wind-north.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wind-south.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wind-west.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wind.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wine-glass.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\wrench.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\zoom-in.svg" />
+    <Content Include="app-assets\fonts\LivIconsEvo\svg\zoom-out.svg" />
+    <Content Include="app-assets\images\backgrounds\app-chat-bg.svg" />
+    <Content Include="app-assets\images\banner\banner-1.jpg" />
+    <Content Include="app-assets\images\banner\banner-10.jpg" />
+    <Content Include="app-assets\images\banner\banner-11.jpg" />
+    <Content Include="app-assets\images\banner\banner-12.jpg" />
+    <Content Include="app-assets\images\banner\banner-13.jpg" />
+    <Content Include="app-assets\images\banner\banner-14.jpg" />
+    <Content Include="app-assets\images\banner\banner-15.jpg" />
+    <Content Include="app-assets\images\banner\banner-16.jpg" />
+    <Content Include="app-assets\images\banner\banner-17.jpg" />
+    <Content Include="app-assets\images\banner\banner-18.jpg" />
+    <Content Include="app-assets\images\banner\banner-19.jpg" />
+    <Content Include="app-assets\images\banner\banner-2.jpg" />
+    <Content Include="app-assets\images\banner\banner-20.jpg" />
+    <Content Include="app-assets\images\banner\banner-21.jpg" />
+    <Content Include="app-assets\images\banner\banner-22.jpg" />
+    <Content Include="app-assets\images\banner\banner-23.jpg" />
+    <Content Include="app-assets\images\banner\banner-24.jpg" />
+    <Content Include="app-assets\images\banner\banner-25.jpg" />
+    <Content Include="app-assets\images\banner\banner-26.jpg" />
+    <Content Include="app-assets\images\banner\banner-27.jpg" />
+    <Content Include="app-assets\images\banner\banner-28.jpg" />
+    <Content Include="app-assets\images\banner\banner-29.jpg" />
+    <Content Include="app-assets\images\banner\banner-3.jpg" />
+    <Content Include="app-assets\images\banner\banner-30.jpg" />
+    <Content Include="app-assets\images\banner\banner-31.jpg" />
+    <Content Include="app-assets\images\banner\banner-32.jpg" />
+    <Content Include="app-assets\images\banner\banner-33.jpg" />
+    <Content Include="app-assets\images\banner\banner-34.jpg" />
+    <Content Include="app-assets\images\banner\banner-35.jpg" />
+    <Content Include="app-assets\images\banner\banner-36.jpg" />
+    <Content Include="app-assets\images\banner\banner-37.jpg" />
+    <Content Include="app-assets\images\banner\banner-38.jpg" />
+    <Content Include="app-assets\images\banner\banner-39.jpg" />
+    <Content Include="app-assets\images\banner\banner-4.jpg" />
+    <Content Include="app-assets\images\banner\banner-40.jpg" />
+    <Content Include="app-assets\images\banner\banner-5.jpg" />
+    <Content Include="app-assets\images\banner\banner-6.jpg" />
+    <Content Include="app-assets\images\banner\banner-7.jpg" />
+    <Content Include="app-assets\images\banner\banner-8.jpg" />
+    <Content Include="app-assets\images\banner\banner-9.jpg" />
+    <Content Include="app-assets\images\banner\parallax-4.jpg" />
+    <Content Include="app-assets\images\cards\1.png" />
+    <Content Include="app-assets\images\cards\2.png" />
+    <Content Include="app-assets\images\cards\3.png" />
+    <Content Include="app-assets\images\cards\4.png" />
+    <Content Include="app-assets\images\cards\5.png" />
+    <Content Include="app-assets\images\cards\6.png" />
+    <Content Include="app-assets\images\cards\amer-express.png" />
+    <Content Include="app-assets\images\cards\discover.png" />
+    <Content Include="app-assets\images\cards\face-regular-24.png" />
+    <Content Include="app-assets\images\cards\finance.jpg" />
+    <Content Include="app-assets\images\cards\mastercard.png" />
+    <Content Include="app-assets\images\cards\visa.png" />
+    <Content Include="app-assets\images\ico\favicon.ico" />
+    <Content Include="app-assets\images\logo\favicon.ico" />
+    <Content Include="app-assets\images\logo\frest-logo.png" />
+    <Content Include="app-assets\images\logo\logo-light.png" />
+    <Content Include="app-assets\images\logo\logo.png" />
+    <Content Include="app-assets\images\logo\wissentech.png" />
+    <Content Include="app-assets\images\no-avatar.png" />
+    <Content Include="app-assets\images\pages\404.png" />
+    <Content Include="app-assets\images\pages\500.png" />
+    <Content Include="app-assets\images\pages\arrow-down.png" />
+    <Content Include="app-assets\images\pages\auth-bg.jpg" />
+    <Content Include="app-assets\images\pages\login.png" />
+    <Content Include="app-assets\images\pages\not-authorized.png" />
+    <Content Include="app-assets\js\core\app-menu.js" />
+    <Content Include="app-assets\js\core\app-menu.min.js" />
+    <Content Include="app-assets\js\core\app.js" />
+    <Content Include="app-assets\js\core\app.min.js" />
+    <Content Include="app-assets\js\core\libraries\bootstrap.min.js" />
+    <Content Include="app-assets\js\core\libraries\jquery.min.js" />
+    <Content Include="app-assets\js\custom.js" />
+    <Content Include="app-assets\js\scripts\components.js" />
+    <Content Include="app-assets\js\scripts\configs\horizontal-menu.js" />
+    <Content Include="app-assets\js\scripts\configs\horizontal-menu.min.js" />
+    <Content Include="app-assets\js\scripts\footer.js" />
+    <Content Include="app-assets\vendors\css\animate\animate.css" />
+    <Content Include="app-assets\vendors\css\calendars\extensions\daygrid.min.css" />
+    <Content Include="app-assets\vendors\css\calendars\fullcalendar.min.css" />
+    <Content Include="app-assets\vendors\css\calendars\fullcalendar.print.css" />
+    <Content Include="app-assets\vendors\css\calendars\tui-calendar.min.css" />
+    <Content Include="app-assets\vendors\css\calendars\tui-date-picker.css" />
+    <Content Include="app-assets\vendors\css\calendars\tui-time-picker.css" />
+    <Content Include="app-assets\vendors\css\charts\apexcharts.css" />
+    <Content Include="app-assets\vendors\css\charts\chartist.min.css" />
+    <Content Include="app-assets\vendors\css\documentation.css" />
+    <Content Include="app-assets\vendors\css\editors\quill\katex.min.css" />
+    <Content Include="app-assets\vendors\css\editors\quill\monokai-sublime.min.css" />
+    <Content Include="app-assets\vendors\css\editors\quill\quill.bubble.css" />
+    <Content Include="app-assets\vendors\css\editors\quill\quill.snow.css" />
+    <Content Include="app-assets\vendors\css\extensions\bootstrap-treeview.min.css" />
+    <Content Include="app-assets\vendors\css\extensions\cropper\cropper.css" />
+    <Content Include="app-assets\vendors\css\extensions\cropper\cropper.min.css" />
+    <Content Include="app-assets\vendors\css\extensions\dataTables.checkboxes.css" />
+    <Content Include="app-assets\vendors\css\extensions\dd-icon\dd-icon.svg" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\dx.common.css" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\dx.softblue.css" />
+    <Content Include="app-assets\vendors\css\extensions\dragula.min.css" />
+    <Content Include="app-assets\vendors\css\extensions\jquery.contextMenu.min.css" />
+    <Content Include="app-assets\vendors\css\extensions\nouislider.min.css" />
+    <Content Include="app-assets\vendors\css\extensions\pace.css" />
+    <Content Include="app-assets\vendors\css\extensions\shepherd-theme-default.css" />
+    <Content Include="app-assets\vendors\css\extensions\sweetalert2.min.css" />
+    <Content Include="app-assets\vendors\css\extensions\swiper.min.css" />
+    <Content Include="app-assets\vendors\css\extensions\tether-theme-arrows.css" />
+    <Content Include="app-assets\vendors\css\extensions\tether.min.css" />
+    <Content Include="app-assets\vendors\css\extensions\toastr.css" />
+    <Content Include="app-assets\vendors\css\extensions\unslider.css" />
+    <Content Include="app-assets\vendors\css\file-uploaders\dropzone.min.css" />
+    <Content Include="app-assets\vendors\css\forms\select\select2.css" />
+    <Content Include="app-assets\vendors\css\forms\select\select2.min.css" />
+    <Content Include="app-assets\vendors\css\forms\spinner\jquery.bootstrap-touchspin.css" />
+    <Content Include="app-assets\vendors\css\forms\toggle\switchery.css" />
+    <Content Include="app-assets\vendors\css\forms\toggle\switchery.min.css" />
+    <Content Include="app-assets\vendors\css\jkanban\jkanban.min.css" />
+    <Content Include="app-assets\vendors\css\modal\facebook.css" />
+    <Content Include="app-assets\vendors\css\modal\google.css" />
+    <Content Include="app-assets\vendors\css\modal\twitter.css" />
+    <Content Include="app-assets\vendors\css\perfect-scrollbar\perfect-scrollbar.min.css" />
+    <Content Include="app-assets\vendors\css\pickers\daterange\daterangepicker.css" />
+    <Content Include="app-assets\vendors\css\pickers\pickadate\classic.css" />
+    <Content Include="app-assets\vendors\css\pickers\pickadate\classic.date.css" />
+    <Content Include="app-assets\vendors\css\pickers\pickadate\classic.time.css" />
+    <Content Include="app-assets\vendors\css\pickers\pickadate\default.css" />
+    <Content Include="app-assets\vendors\css\pickers\pickadate\default.time.css" />
+    <Content Include="app-assets\vendors\css\pickers\pickadate\pickadate.css" />
+    <Content Include="app-assets\vendors\css\tables\datatable\datatables.min.css" />
+    <Content Include="app-assets\vendors\css\tables\datatable\extensions\dataTables.checkboxes.css" />
+    <Content Include="app-assets\vendors\css\tables\datatable\responsive.bootstrap.min.css" />
+    <Content Include="app-assets\vendors\css\ui\plyr.css" />
+    <Content Include="app-assets\vendors\css\ui\prism-treeview.css" />
+    <Content Include="app-assets\vendors\css\ui\prism.min.css" />
+    <Content Include="app-assets\vendors\css\vendors-rtl.min.css" />
+    <Content Include="app-assets\vendors\css\vendors.min.css" />
+    <Content Include="app-assets\vendors\css\weather-icons\climacons.min.css" />
+    <Content Include="app-assets\vendors\js\calendar\chance.min.js" />
+    <Content Include="app-assets\vendors\js\calendar\extensions\daygrid.min.js" />
+    <Content Include="app-assets\vendors\js\calendar\extensions\interactions.min.js" />
+    <Content Include="app-assets\vendors\js\calendar\tui-calendar.min.js" />
+    <Content Include="app-assets\vendors\js\calendar\tui-code-snippet.min.js" />
+    <Content Include="app-assets\vendors\js\calendar\tui-date-picker.min.js" />
+    <Content Include="app-assets\vendors\js\calendar\tui-dom.js" />
+    <Content Include="app-assets\vendors\js\calendar\tui-time-picker.min.js" />
+    <Content Include="app-assets\vendors\js\charts\apexcharts.js" />
+    <Content Include="app-assets\vendors\js\charts\apexcharts.min.js" />
+    <Content Include="app-assets\vendors\js\charts\chart.min.js" />
+    <Content Include="app-assets\vendors\js\charts\chartist.min.js" />
+    <Content Include="app-assets\vendors\js\charts\gmaps.min.js" />
+    <Content Include="app-assets\vendors\js\coming-soon\jquery.countdown.js" />
+    <Content Include="app-assets\vendors\js\coming-soon\jquery.countdown.min.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\favicon.png" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\align-center.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\align-justify.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\align-left.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\align-right.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\attachment.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\audio.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\authorship.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\background.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\blockquote.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\bold.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\clean.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\code.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\color.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\comment.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\direction-ltr.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\direction-rtl.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\dropdown.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\emoji.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\float-center.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\float-full.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\float-left.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\float-right.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\font.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\formula.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\hashtag.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\header-2.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\header.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\image.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\indent.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\italic.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\link.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\list-bullet.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\list-check.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\list-ordered.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\map.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\mention.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\outdent.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\redo.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\size-decrease.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\size-increase.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\size.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\spacing.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\speech.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\strike.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\subscript.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\superscript.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-border-all.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-border-bottom.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-border-left.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-border-none.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-border-outside.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-border-right.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-border-top.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-delete-cells.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-delete-columns.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-delete-rows.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-insert-cells.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-insert-columns.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-insert-rows.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-merge-cells.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table-unmerge-cells.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\table.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\underline.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\undo.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\icons\video.svg" />
+    <Content Include="app-assets\vendors\js\editors\quill\highlight.min.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\katex.min.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\quill.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\quill.min.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\themes\base.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\themes\bubble.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\themes\snow.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\ui\color-picker.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\ui\icon-picker.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\ui\icons.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\ui\picker.js" />
+    <Content Include="app-assets\vendors\js\editors\quill\ui\tooltip.js" />
+    <Content Include="app-assets\vendors\js\extensions\bootstrap-treeview.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\cropper\cropper.common.js" />
+    <Content Include="app-assets\vendors\js\extensions\cropper\cropper.esm.js" />
+    <Content Include="app-assets\vendors\js\extensions\cropper\cropper.js" />
+    <Content Include="app-assets\vendors\js\extensions\cropper\jquery-cropper.common.js" />
+    <Content Include="app-assets\vendors\js\extensions\cropper\jquery-cropper.esm.js" />
+    <Content Include="app-assets\vendors\js\extensions\cropper\jquery-cropper.js" />
+    <Content Include="app-assets\vendors\js\extensions\cropper\jquery-cropper.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\dataTables.checkboxes.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\devexpress\dx.all.js" />
+    <Content Include="app-assets\vendors\js\extensions\devexpress\dx.aspnet.data.js" />
+    <Content Include="app-assets\vendors\js\extensions\devexpress\dx.messages.tr.js" />
+    <Content Include="app-assets\vendors\js\extensions\dragula.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\dropzone.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\gcal.js" />
+    <Content Include="app-assets\vendors\js\extensions\i18next.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\i18nextBrowserLanguageDetector.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\i18nextXHRBackend.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\idle-timer.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\jquery-i18next.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\jquery.contextMenu.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\jquery.mousewheel.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\jquery.steps.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\jquery.ui.position.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\lang-all.js" />
+    <Content Include="app-assets\vendors\js\extensions\locale-all.js" />
+    <Content Include="app-assets\vendors\js\extensions\moment.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\nouislider.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\numeral\locales.js" />
+    <Content Include="app-assets\vendors\js\extensions\numeral\numeral.js" />
+    <Content Include="app-assets\vendors\js\extensions\pace.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\polyfill.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\quill.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\shepherd.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\sweetalert2.all.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\swiper.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\tether.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\toastr.min.js" />
+    <Content Include="app-assets\vendors\js\extensions\transition.js" />
+    <Content Include="app-assets\vendors\js\extensions\underscore-min.js" />
+    <Content Include="app-assets\vendors\js\extensions\unslider-min.js" />
+    <Content Include="app-assets\vendors\js\extensions\wNumb.js" />
+    <Content Include="app-assets\vendors\js\forms\extended\maxlength\bootstrap-maxlength.js" />
+    <Content Include="app-assets\vendors\js\forms\extended\typeahead\bloodhound.min.js" />
+    <Content Include="app-assets\vendors\js\forms\extended\typeahead\handlebars.js" />
+    <Content Include="app-assets\vendors\js\forms\extended\typeahead\typeahead.bundle.min.js" />
+    <Content Include="app-assets\vendors\js\forms\inputs\bootstrap.file-input.js" />
+    <Content Include="app-assets\vendors\js\forms\repeater\jquery.repeater.min.js" />
+    <Content Include="app-assets\vendors\js\forms\select\select2.full.js" />
+    <Content Include="app-assets\vendors\js\forms\select\select2.full.min.js" />
+    <Content Include="app-assets\vendors\js\forms\select\select2.js" />
+    <Content Include="app-assets\vendors\js\forms\select\select2.min.js" />
+    <Content Include="app-assets\vendors\js\forms\spinner\jquery.bootstrap-touchspin.js" />
+    <Content Include="app-assets\vendors\js\forms\toggle\switchery.js" />
+    <Content Include="app-assets\vendors\js\forms\toggle\switchery.min.js" />
+    <Content Include="app-assets\vendors\js\forms\validation\jqBootstrapValidation.js" />
+    <Content Include="app-assets\vendors\js\forms\validation\jquery.validate.min.js" />
+    <Content Include="app-assets\vendors\js\jkanban\jkanban.min.js" />
+    <Content Include="app-assets\vendors\js\miscellaneous\countdown.min.js" />
+    <Content Include="app-assets\vendors\js\pickers\daterange\daterangepicker.js" />
+    <Content Include="app-assets\vendors\js\pickers\daterange\moment.min.js" />
+    <Content Include="app-assets\vendors\js\pickers\pickadate\legacy.js" />
+    <Content Include="app-assets\vendors\js\pickers\pickadate\picker.date.js" />
+    <Content Include="app-assets\vendors\js\pickers\pickadate\picker.js" />
+    <Content Include="app-assets\vendors\js\pickers\pickadate\picker.time.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\buttons.bootstrap.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\buttons.html5.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\buttons.print.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\dataTables.bootstrap4.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\dataTables.buttons.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\datatables.checkboxes.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\datatables.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\dataTables.responsive.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\dataTables.select.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\pdfmake.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\responsive.bootstrap.min.js" />
+    <Content Include="app-assets\vendors\js\tables\datatable\vfs_fonts.js" />
+    <Content Include="app-assets\vendors\js\ui\affix.js" />
+    <Content Include="app-assets\vendors\js\ui\blockUI.min.js" />
+    <Content Include="app-assets\vendors\js\ui\headroom.min.js" />
+    <Content Include="app-assets\vendors\js\ui\jquery-sliding-menu.js" />
+    <Content Include="app-assets\vendors\js\ui\jquery.matchHeight-min.js" />
+    <Content Include="app-assets\vendors\js\ui\jquery.sticky-kit.min.js" />
+    <Content Include="app-assets\vendors\js\ui\jquery.sticky.js" />
+    <Content Include="app-assets\vendors\js\ui\plyr.min.js" />
+    <Content Include="app-assets\vendors\js\ui\popper.min.js" />
+    <Content Include="app-assets\vendors\js\ui\prism-treeview.js" />
+    <Content Include="app-assets\vendors\js\ui\prism.min.js" />
+    <Content Include="app-assets\vendors\js\ui\screenfull.min.js" />
+    <Content Include="app-assets\vendors\js\ui\unison.min.js" />
+    <Content Include="app-assets\vendors\js\vendors.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="app-assets\.DS_Store" />
+    <Content Include="app-assets\data\locales\de.json" />
+    <Content Include="app-assets\data\locales\en.json" />
+    <Content Include="app-assets\data\locales\fr.json" />
+    <Content Include="app-assets\data\locales\pt.json" />
+    <Content Include="app-assets\fonts\boxicons\fonts\boxicons.eot" />
+    <Content Include="app-assets\fonts\boxicons\fonts\boxicons.ttf" />
+    <Content Include="app-assets\fonts\boxicons\fonts\boxicons.woff" />
+    <Content Include="app-assets\fonts\boxicons\fonts\boxicons.woff2" />
+    <Content Include="app-assets\vendors\css\editors\quill\fonts\KaTeX_Main-Regular.woff2" />
+    <Content Include="app-assets\vendors\css\editors\quill\fonts\KaTeX_Math-Italic.woff2" />
+    <Content Include="app-assets\vendors\css\extensions\dd-icon\dd-icon.eot" />
+    <Content Include="app-assets\vendors\css\extensions\dd-icon\dd-icon.ttf" />
+    <Content Include="app-assets\vendors\css\extensions\dd-icon\dd-icon.woff" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxicons.ttf" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxicons.woff" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxicons.woff2" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxiconsios.ttf" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxiconsios.woff" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxiconsios.woff2" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxiconsmaterial.ttf" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxiconsmaterial.woff" />
+    <Content Include="app-assets\vendors\css\extensions\devexpress\icons\dxiconsmaterial.woff2" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\base.styl" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\bubble.styl" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\bubble\toolbar.styl" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\bubble\tooltip.styl" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\core.styl" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\snow.styl" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\snow\toolbar.styl" />
+    <Content Include="app-assets\vendors\js\editors\quill\assets\snow\tooltip.styl" />
+    <Content Include="app-assets\vendors\js\extensions\quill.min.js.map" />
+    <None Include="Scripts\jquery-3.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrestTema.BLL\FrestTema.BLL.csproj">
+      <Project>{6493d14c-7ed1-4b02-adea-24af7aeee9da}</Project>
+      <Name>FrestTema.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrestTema.DAL\FrestTema.DAL.csproj">
+      <Project>{b60ae9b6-2052-4042-838e-9adbe3b1e923}</Project>
+      <Name>FrestTema.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrestTema.Models\FrestTema.Models.csproj">
+      <Project>{11034a6d-72b1-4644-b7c3-e968c3cdf869}</Project>
+      <Name>FrestTema.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56644</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44323/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
